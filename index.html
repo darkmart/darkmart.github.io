@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DarkMart</title>
+    <script src="https://unpkg.com/vue@2.5.9/dist/vue.js" charset="utf-8"></script>
+    <style media="screen">
+      html {
+        background-color: #303030;
+      }
+      .centered {
+        text-align: center;
+      }
+      .item {
+        background-color: #f0f0f0;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .title {
+        color: #f0f0f0
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="centered">
+        <h1 class="title">Welcome to DarkMart</h1>
+        <h3 class="title">339-707-5013</h3>
+        <p class="title">*Note all purchases are one time payments</p>
+      </div>
+      <div v-for="item in listings" class="item">
+        <h3>{{item.title}}</h3>
+        <img width="60" height="60" :src="item.img">
+      </div>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: '#app',
+        data: {
+          listings: [
+            {
+              title: 'Netflix Account - $10',
+              img: 'https://cdn.vox-cdn.com/thumbor/PgkEvDUnSUA_85lvxA3Hu4dxrs8=/800x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/6678919/10478570_10152214521608870_2744465531652776073_n.0.png'
+            },
+            {
+              title: 'Spotify Premium - $10',
+              img: 'https://seeklogo.com/images/S/spotify-2015-logo-560E071CB7-seeklogo.com.png'
+            },
+            {
+              title: 'TIDAL - $10',
+              img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/062015/tidal_logo.png?itok=tVjAbe6p'
+            },
+            {
+              title: 'Old Hall Mobile Sign in',
+              img: 'http://www.three.co.uk/static/images/device_pages/MobileVersion/Apple/iPhone_7_Plus/Red/desktop/1.jpg',
+              description: 'Old Hall mobile sign in was an amazing thing until it was fixed by the administration. Today, I am happy to say that it is back in action. This new method is completely undetectable by the school :)'
+            }
+          ]
+        }
+      })
+    </script>
+  </body>
+</html>
