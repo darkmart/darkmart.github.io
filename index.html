@@ -37,7 +37,7 @@
         <div v-for="item in listings" class="row item">
           <div class="column">
             <h3>{{item.title}}</h3>
-            <img width="60" class="resize" :src="item.img"/>
+            <img :width="item.width || 60" class="resize" :src="item.img"/>
           </div>
           <div class="column">
             <p>{{item.description}}</p>
@@ -75,7 +75,8 @@
             {
               title: 'Sephora Makeup Brush - $10',
               description: 'Liquid Foundation makeup brush from Sephora. Cover | FX. Costs $38 retail. Brand new.',
-              img: 'brush.png'
+              img: 'brush.png',
+              width: 200
             }
           ]
         }
